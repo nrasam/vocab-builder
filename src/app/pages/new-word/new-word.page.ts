@@ -33,11 +33,11 @@ export class NewWordPage implements OnInit {
 
   nextWord(){
     this.getRandomWord();
-    this.vocabListService.saveWord(this.word, false);
+    //this.vocabListService.saveWord(this.word, false);
   }
 
   ignore(){
     this.getRandomWord();
-    this.vocabListService.saveWord(this.word, true);
+    //this.vocabListService.saveWord(this.word, true);
   }
 }

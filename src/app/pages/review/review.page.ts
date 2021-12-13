@@ -30,54 +30,38 @@ export class ReviewPage implements OnInit {
     }
   }
 
-  onForgotten(){
-    this.vocabListService.addTimeToWord(2000, this.word);
+  nextWord(){
     if((this.reviewList.length - 1) != this.idx){
       this.word = this.reviewList[++this.idx].word;
     }else{
       this.listEmpty = true;
       this.word = "Go learn another word";
     }
+  }
+
+  onForgotten(){
+    this.vocabListService.addTimeToWord(2000, this.word);
+    this.nextWord();
   }
 
   onPartial(){
     this.vocabListService.addTimeToWord(5000, this.word);
-    if((this.reviewList.length - 1) != this.idx){
-      this.word = this.reviewList[++this.idx].word;
-    }else{
-      this.listEmpty = true;
-      this.word = "Go learn another word";
-    }
+    this.nextWord();
   }
 
   onWithEffort(){
     this.vocabListService.addTimeToWord(10000, this.word);
-    if((this.reviewList.length - 1) != this.idx){
-      this.word = this.reviewList[++this.idx].word;
-    }else{
-      this.listEmpty = true;
-      this.word = "Go learn another word";
-    }
+    this.nextWord();
   }
 
   onImmediate(){
     this.vocabListService.addTimeToWord(15000, this.word);
-    if((this.reviewList.length - 1) != this.idx){
-      this.word = this.reviewList[++this.idx].word;
-    }else{
-      this.listEmpty = true;
-      this.word = "Go learn another word";
-    }
+    this.nextWord();
   }
 
   onDelete(){
     this.vocabListService.deleteWord(this.word);
     this.vocabListService.addTimeToWord(0, this.word);
-    if((this.reviewList.length - 1) != this.idx){
-      this.word = this.reviewList[++this.idx].word;
-    }else{
-      this.listEmpty = true;
-      this.word = "Go learn another word";
-    }
+    this.nextWord();
   }
 }
