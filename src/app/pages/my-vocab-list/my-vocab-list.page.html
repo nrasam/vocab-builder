@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Your Vocab List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>You've Learned {{vocabSize}} Words!</ion-label>
+    </ion-item>
+    <ion-item *ngFor="let word of vocabList" [routerLink]="['/vocab-list-detail', word.word]">
+      <ion-label>{{word.word}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

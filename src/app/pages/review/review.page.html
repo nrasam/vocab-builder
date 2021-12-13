@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Do You Remember This Word?</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col offset="3">
+        <ion-title>{{word}}</ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!listEmpty">
+      <ion-col offset="2" size="8">
+        <ion-card button="true" (click)="onImmediate()">
+          <ion-item>
+            <ion-icon name="skull" slot="start"></ion-icon>
+            <ion-label>Forgotten</ion-label>
+          </ion-item>
+          <ion-card-content>
+            Next Test: <ion-icon name="alarm"></ion-icon> 1 Minute
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!listEmpty">
+      <ion-col offset="2" size="8">
+        <ion-card button="true" (click)="onImmediate()">
+          <ion-item>
+            <ion-icon name="sad" slot="start"></ion-icon>
+            <ion-label>Partially Recalled</ion-label>
+          </ion-item>
+          <ion-card-content>
+            Next Test: <ion-icon name="calendar"></ion-icon> 3 Days
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!listEmpty">
+      <ion-col offset="2" size="8">
+        <ion-card button="true" (click)="onImmediate()">
+          <ion-item>
+            <ion-icon name="happy" slot="start"></ion-icon>
+            <ion-label>Recalled With Effort</ion-label>
+          </ion-item>
+          <ion-card-content>
+            Next Test: <ion-icon name="calendar"></ion-icon> 4 Days
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!listEmpty">
+      <ion-col offset="2" size="8">
+        <ion-card button="true" (click)="onImmediate()">
+          <ion-item>
+            <ion-icon name="school" slot="start"></ion-icon>
+            <ion-label>Immediately</ion-label>
+          </ion-item>
+          <ion-card-content>
+            Next Test: <ion-icon name="calendar"></ion-icon> 7 Days
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="!listEmpty">
+      <ion-col offset="2" size="8">
+        <ion-card button="true" (click)="onImmediate()">
+          <ion-item>
+            <ion-icon name="trash" slot="start"></ion-icon>
+            <ion-label>Delete</ion-label>
+          </ion-item>
+          <ion-card-content>
+            Remove from list
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label>{{reviewList.length}} words in list</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label>{{reviewList.length - idx}} words left</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
