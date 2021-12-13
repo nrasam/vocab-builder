@@ -27,17 +27,17 @@ export class NewWordPage implements OnInit {
       this.word = res.word;
       this.phonetics = res.phonetics;
       this.meanings = res.meanings;
-      this.vocabListService.saveWord(this.word, false);
+      //this.vocabListService.saveWord(this.word, ignore);
     });
   }
 
   nextWord(){
+    this.vocabListService.saveWord(this.word, false);
     this.getRandomWord();
-    //this.vocabListService.saveWord(this.word, false);
   }
 
   ignore(){
+    this.vocabListService.saveWord(this.word, true);
     this.getRandomWord();
-    //this.vocabListService.saveWord(this.word, true);
   }
 }
