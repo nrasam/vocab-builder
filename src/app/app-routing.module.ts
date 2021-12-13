@@ -11,6 +11,22 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'new-word',
+    loadChildren: () => import('./pages/new-word/new-word.module').then( m => m.NewWordPageModule)
+  },
+  {
+    path: 'my-vocab-list',
+    loadChildren: () => import('./pages/my-vocab-list/my-vocab-list.module').then( m => m.MyVocabListPageModule)
+  },
+  {
+    path: 'review',
+    loadChildren: () => import('./pages/review/review.module').then( m => m.ReviewPageModule)
+  },
+  {
+    path: 'vocab-list-detail/:id',
+    loadChildren: () => import('./pages/vocab-list-detail/vocab-list-detail.module').then( m => m.VocabListDetailPageModule)
+  },
 ];
 
 @NgModule({
