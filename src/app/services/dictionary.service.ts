@@ -57,9 +57,4 @@ export class DictionaryService {
     //this.http.get(`${this.url}/hello`).subscribe(res => console.log(res));
     return false;
   }
-
-  /* getCovideInfo(){
-    const url = 'https://corona.lmao.ninja/v3/covid-19/all';
-    return this.http.get(`${url}`).pipe(map(data => data));
-  } */
 }
